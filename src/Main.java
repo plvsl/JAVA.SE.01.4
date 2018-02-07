@@ -6,9 +6,20 @@ public class Main {
 
         //----------------------------Entering data
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter array length: ");
-        int arraySize = input.nextInt();
+        int arraySize = 0;
+
+        do {
+            System.out.println("Enter array length: ");
+            arraySize = input.nextInt();
+
+            if (arraySize <= 0) {
+                System.out.println("Incorrect! Enter array length again: ");
+                System.out.println("-------------------------");
+            }
+        } while (arraySize <= 0);
+
         int numbers[] = new int[arraySize];
+
         System.out.println("Enter array elements:");
         for (int i = 0; i < arraySize; i++) {
             numbers[i] = input.nextInt();
